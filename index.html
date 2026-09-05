@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0a0b0c">
-<title>Orzecznik III — To nie jest już przedmiot.</title>
+<title>Orzecznik IV — Relikwia spoza świata.</title>
 <style>
 :root{color-scheme:dark;--ivory:#e9e2d4;--gold:#c8a36a;--muted:#a49f95;--line:rgba(209,193,161,.18);--safe-b:env(safe-area-inset-bottom,0px)}
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#0a0b0c;color:var(--ivory)}body{font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}button:focus-visible{outline:2px solid var(--gold);outline-offset:5px}button:disabled{cursor:wait;opacity:.4}button svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}button[aria-pressed=true]{color:#f1cf93;background:rgba(195,160,98,.1)}
@@ -14,7 +14,7 @@
 .bottom{position:fixed;left:4%;right:4%;bottom:calc(26px + var(--safe-b));z-index:3;display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:20px}.view-controls{display:flex;align-items:center;gap:12px}.switch{display:flex;border:1px solid var(--line);border-radius:30px;padding:4px;gap:3px;background:#0c0d0ec4;backdrop-filter:blur(12px)}.switch button{border:0;border-radius:25px;background:none;padding:11px 17px;color:#99948b;font-size:10px;letter-spacing:.03em;transition:background .2s,color .2s}.switch button[aria-pressed=true]{background:rgba(221,191,134,.12);color:#e2d1b1}.interaction{margin:15px 0 0 7px;font-size:9px;color:#86857e;letter-spacing:.03em;display:flex;gap:13px}.interaction span+span:before{content:'·';margin-right:13px;color:#5d5d57}.awakening{text-align:center}.hold{border:1px solid #bea16b65;background:linear-gradient(110deg,#c4984c14,#c4984c07);position:relative;overflow:hidden;border-radius:4px;min-width:223px;padding:17px 26px;letter-spacing:.17em;font-size:10px;text-transform:uppercase;transition:box-shadow .35s,border-color .35s;user-select:none;-webkit-user-select:none;touch-action:none}.hold:before{content:'';position:absolute;inset:0;transform:scaleX(var(--charge,0));transform-origin:left;background:linear-gradient(90deg,#d69c3c15,#efc78036);transition:transform .08s linear}.hold:hover{border-color:#e1bf84bb;box-shadow:0 0 28px #efba6510}.hold b{font-weight:400;position:relative;z-index:1}.hold .star{padding-right:12px;color:var(--gold);font-size:14px}.hold small{font-size:8px;border:1px solid #ddc49725;border-radius:3px;padding:3px 5px;margin-left:16px;color:#ac9b7d;position:relative}.hold-hint{font-size:8px;margin-top:11px;color:#888177;letter-spacing:.1em}.footer-right{text-align:right;color:#767770;font-size:8px;letter-spacing:.15em;line-height:1.9}.engine{display:flex;align-items:center;justify-content:flex-end;gap:7px;margin-bottom:4px}.dot{width:4px;height:4px;background:#bca075;border-radius:50%;box-shadow:0 0 8px #c9ae75}.footer-right em{font-style:normal;color:#9d9586}
 #cinema-exit{position:fixed;bottom:25px;right:30px;z-index:5;opacity:0;pointer-events:none;border:1px solid #d9c7a135;border-radius:25px;background:#090a0bb0;color:#b9ad99;padding:12px 20px;font-size:10px;transition:opacity .3s}body.cinema #cinema-exit{opacity:.7;pointer-events:auto}#verdict{position:fixed;left:50%;bottom:calc(137px + var(--safe-b));transform:translate(-50%,15px);z-index:4;pointer-events:none;opacity:0;transition:opacity .6s,transform .6s;text-align:center;width:max-content;max-width:90%;padding:19px 27px;background:linear-gradient(90deg,transparent,#100e0bdc 15%,#100e0bdc 85%,transparent);border-top:1px solid #cfb58125;border-bottom:1px solid #cfb58125;backdrop-filter:blur(8px)}#verdict.show{opacity:1;transform:translate(-50%,0)}#verdict small{font-size:8px;letter-spacing:.25em;color:#ba995e;display:block;margin-bottom:9px}#verdict strong{font-family:Georgia,serif;font-weight:400;font-size:clamp(16px,1.6vw,25px);letter-spacing:.02em;color:#eedfbd}#verdict span{display:block;font-size:8px;color:#867b65;letter-spacing:.13em;margin-top:9px}
 #labels{position:fixed;inset:0;pointer-events:none;z-index:2;opacity:0;transition:opacity .5s}body.anatomy #labels{opacity:1}body.cinema #labels{opacity:0}.label{position:absolute;left:0;top:0;font-size:8px;letter-spacing:.14em;white-space:nowrap;padding:8px 0 8px 27px;background:linear-gradient(90deg,transparent,#0a0b0c80);color:#d8c39c}.label:before{content:'';position:absolute;left:0;top:12px;width:19px;border-top:1px solid #d5b47688}.label:after{content:'';position:absolute;left:-2px;top:10px;width:4px;height:4px;border:1px solid #c8a66b;border-radius:50%}.label small{display:block;color:#89847a;font-size:7px;letter-spacing:.1em;margin-top:6px}.label:nth-child(even){padding:8px 27px 8px 0;transform:translateX(-100%);text-align:right;background:linear-gradient(270deg,transparent,#0a0b0c80)}.label:nth-child(even):before{left:auto;right:0}.label:nth-child(even):after{left:auto;right:-2px}
-#startup{position:fixed;inset:0;z-index:20;background:radial-gradient(ellipse at center,#1a1814,#080a0b 60%);display:grid;place-items:center;padding:30px;transition:opacity .65s}.ready #startup{opacity:0;pointer-events:none}.start-card{max-width:450px;text-align:center}.start-card svg{width:50px;height:65px;fill:none;stroke:#c5a473;stroke-width:.8;margin-bottom:30px}.start-card h2{font-family:Georgia,serif;font-weight:400;font-size:28px;margin:0 0 18px}.start-card p{color:#aaa092;font-size:13px;line-height:1.8}.start-card .note{font-size:11px;color:#817a70}.start-card code{font-size:10px;display:block;white-space:normal;color:#baa17a;line-height:1.6;overflow-wrap:anywhere}.modal{border:1px solid #d5be902d;border-radius:5px;background:#111213f5;color:var(--ivory);width:min(480px,calc(100vw - 40px));padding:34px;box-shadow:0 30px 120px #000c}.modal::backdrop{background:#030507ac;backdrop-filter:blur(8px)}.modal h2{font:normal 30px Georgia,serif;margin:5px 0 22px}.modal p{font-size:12px;line-height:1.8;color:#ada79c}.modal .close{position:absolute;right:15px;top:15px}.modal dl{font-size:11px;margin:23px 0}.modal dl>div{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);gap:20px}.modal dt{color:#dac298}.modal dd{margin:0;color:#a39c90;text-align:right}.modal .fine{font-size:10px;color:#817c72}.modal a{color:#c9aa77}.quality{display:flex;justify-content:space-between;align-items:center;font-size:11px;gap:20px;margin:25px 0}.quality select{color:#cfb78b;background:#1c1c1a;border:1px solid #d6bd8825;padding:8px 12px;border-radius:3px}
+#startup{position:fixed;inset:0;z-index:20;background:radial-gradient(ellipse at center,#1a1814,#080a0b 60%);display:grid;place-items:center;padding:30px;transition:opacity .65s}.ready #startup{opacity:0;pointer-events:none}.start-card{max-width:450px;text-align:center}.start-card svg{width:50px;height:65px;fill:none;stroke:#c5a473;stroke-width:.8;margin-bottom:30px}.start-card h2{font-family:Georgia,serif;font-weight:400;font-size:28px;margin:0 0 18px}.start-card p{color:#aaa092;font-size:13px;line-height:1.8}.start-card .note{font-size:11px;color:#817a70}.start-card code{font-size:10px;display:block;white-space:normal;color:#baa17a;line-height:1.6;overflow-wrap:anywhere}.modal{border:1px solid #d5be902d;border-radius:5px;background:#111213f5;color:var(--ivory);width:min(480px,calc(100vw - 40px));padding:34px;box-shadow:0 30px 120px #000c}.modal::backdrop{background:#030507ac;backdrop-filter:blur(8px)}.modal h2{font:normal 30px Georgia,serif;margin:5px 0 22px}.modal p{font-size:12px;line-height:1.8;color:#ada79c}.modal .close{position:absolute;right:15px;top:15px}.modal dl{font-size:11px;margin:23px 0}.modal dl>div{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);gap:20px}.modal dt{color:#dac298}.modal dd{margin:0;color:#a39c90;text-align:right}.modal .fine{font-size:10px;color:#817c72}.modal a{color:#c9aa77}.readout{display:none !important}
 @media(min-width:1600px){.intro{top:34%}.bottom{bottom:35px}.intro p{font-size:13px}}
 @media(max-width:1000px) and (min-width:651px){.intro{left:4%;max-width:28%;top:33%}h1{font-size:42px}.intro p{font-size:10px}.composition{font-size:7px;gap:9px}.readout{right:3%;width:91px}.bottom{gap:8px;left:3%;right:3%}.view-controls{gap:3px}.switch button{padding:10px 12px}.hold{min-width:193px;padding:15px 18px}.footer-right{font-size:7px}.interaction{font-size:8px;gap:8px}.interaction span+span:before{margin-right:8px}.hold small{display:none}}
 @media(max-width:650px){header{left:23px;right:19px;top:max(22px,env(safe-area-inset-top))}.wordmark{gap:10px}.wordmark strong{font-size:9px;letter-spacing:.2em}.wordmark small{font-size:7px;letter-spacing:.12em;margin-top:5px}.sigil{width:24px;height:29px}.header-tools{gap:0}.icon{width:32px;height:32px}.icon svg{width:16px;height:16px}.edition{display:none}.intro{top:max(88px,calc(env(safe-area-inset-top) + 63px));left:24px;right:24px;max-width:none;text-align:left;pointer-events:none}.eyebrow{font-size:7px;letter-spacing:.17em;gap:7px}.eyebrow:before{width:15px}h1{font-size:34px;line-height:1.05;margin:10px 0;letter-spacing:-.04em}h1 i{display:inline;margin-left:4px}h1 sup{font-size:8px;margin-left:5px}.intro p,.composition,.catalogue{display:none}.readout{right:24px;top:181px;width:100px;display:flex;flex-direction:column;align-items:flex-end}.readout .micro{font-size:6px;letter-spacing:.13em}.readout .big{font-size:20px;margin:5px 0}.readout .big small{font-size:8px}.readout .linebar{width:64px;margin:6px 0}.core-status{font-size:6px;letter-spacing:.07em}.readout .serial{display:none}.bottom{left:23px;right:23px;bottom:calc(21px + var(--safe-b));display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}.bottom>div:first-child{width:100%;display:flex;align-items:center;justify-content:space-between;order:2}.view-controls{gap:6px}.switch button{font-size:9px;padding:9px 14px}.switch{padding:3px}.interaction{display:none}.awakening{order:1;width:100%;display:flex;flex-direction:column;align-items:center;margin-bottom:1px}.hold{min-width:225px;padding:15px 22px;font-size:9px;letter-spacing:.16em}.hold small{display:none}.hold-hint{font-size:7px;margin-top:9px;letter-spacing:.065em}.footer-right{position:absolute;bottom:7px;right:0;font-size:6px;letter-spacing:.11em}.footer-right .engine{gap:5px;margin-bottom:1px}.footer-right>div:last-child{font-size:6px}.dot{width:3px;height:3px}#verdict{bottom:calc(161px + var(--safe-b));padding:15px 10px;width:92%;max-width:92%}#verdict strong{font-size:18px}#verdict small,#verdict span{font-size:6px}#labels .label{font-size:6px;letter-spacing:.08em}#labels .label small{font-size:6px}.label{padding-left:19px}.label:before{width:12px}.label:nth-child(even){padding-right:19px}.modal{padding:28px}.modal h2{font-size:27px}.modal p{font-size:11px}body.anatomy .intro{opacity:.4}body.anatomy .readout{opacity:0}}
@@ -33,31 +33,32 @@
 </head>
 <body>
 <canvas id="scene" aria-label="Interaktywny model 3D: Orzecznik Absolutny. Przeciągnij, aby obrócić. Spacja aktywuje rdzeń." tabindex="0"></canvas>
-<header class="ui"><div class="wordmark"><svg class="sigil" viewBox="0 0 34 42" aria-hidden="true"><path d="M17 1 32 21 17 41 2 21Z M17 1v40M2 21h30 M17 8 26 21 17 34 8 21Z"/><circle cx="17" cy="21" r="5"/></svg><div><strong>RELIKWIARZ / III</strong><small>SEKCJA OBIEKTÓW NIEUŚPIONYCH</small></div></div><div class="edition">Non est machina. Vivit.</div><div class="header-tools"><button class="icon" id="sound" aria-label="Włącz dźwięk" aria-pressed="false" title="Dźwięk · M"><svg viewBox="0 0 20 20"><path d="M9 4 5 7H2v6h3l4 3Z"/><path id="sound-path" d="m13 7 5 6m0-6-5 6"/></svg></button><button class="icon" id="cinema" aria-label="Tryb kinowy" title="Tryb kinowy · H"><svg viewBox="0 0 20 20"><path d="M7 3H3v4m10-4h4v4M3 13v4h4m6 0h4v-4"/></svg></button><button class="icon" id="help" aria-label="Instrukcja i ustawienia" title="Instrukcja i ustawienia"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7"/><path d="M10 9v5m0-8v.1"/></svg></button></div></header>
-<section class="intro ui"><div class="eyebrow">Obiekt VII &nbsp; / &nbsp; stadium III</div><h1>Orzecznik<i>Absolutny<sup>III</sup></i></h1><p>Nie jest już przedmiotem.<br><span class="alive-copy">Wie, że tu jesteś.</span></p><div class="composition">OBSYDIAN &nbsp; / &nbsp; AURUM<br>MATERIA, KTÓRA ODDYCHA</div><div class="catalogue"><span>STATUS IZOLACJI</span><b>NARUSZONY</b></div></section>
-<aside class="readout ui" aria-label="Fikcyjny odczyt energii"><div class="micro">POZIOM PRZEBUDZENIA</div><div class="big"><span id="energy">03</span><small>%</small></div><div class="linebar"><i id="bar"></i></div><div class="core-status" id="status">ODDYCHA · OBSERWUJE</div><svg class="biosignal" viewBox="0 0 120 30" aria-hidden="true"><path id="heartbeat" d="M0 15H120"/></svg><div class="pulse-label"><span id="pulse-value">47</span> IMPULSÓW / MIN</div><div class="serial">NIHIL EST IN ORDINE<br>VII / MMXXVI</div></aside>
+<header class="ui"><div class="wordmark"><svg class="sigil" viewBox="0 0 34 42" aria-hidden="true"><path d="M17 1 32 21 17 41 2 21Z M17 1v40M2 21h30 M17 8 26 21 17 34 8 21Z"/><circle cx="17" cy="21" r="5"/></svg><div><strong>RELIKWIARZ / IV</strong><small>SEKCJA OBIEKTÓW NIEUŚPIONYCH</small></div></div><div class="edition">Aqua tenebris. Oculus vigilat.</div><div class="header-tools"><button class="icon" id="sound" aria-label="Włącz dźwięk" aria-pressed="false" title="Dźwięk · M"><svg viewBox="0 0 20 20"><path d="M9 4 5 7H2v6h3l4 3Z"/><path id="sound-path" d="m13 7 5 6m0-6-5 6"/></svg></button><button class="icon" id="cinema" aria-label="Tryb kinowy" title="Tryb kinowy · H"><svg viewBox="0 0 20 20"><path d="M7 3H3v4m10-4h4v4M3 13v4h4m6 0h4v-4"/></svg></button><button class="icon" id="help" aria-label="Instrukcja i ustawienia" title="Instrukcja i ustawienia"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7"/><path d="M10 9v5m0-8v.1"/></svg></button></div></header>
+<section class="intro ui"><div class="eyebrow">Obiekt VII &nbsp; / &nbsp; stadium IV</div><h1>Orzecznik<i>Absolutny<sup>IV</sup></i></h1><p>Nie jest już przedmiotem.<br><span class="alive-copy">Wie, że tu jesteś.</span></p><div class="composition">OBSYDIAN &nbsp; / &nbsp; AURUM<br>MATERIA, KTÓRA ODDYCHA</div><div class="catalogue"><span>STATUS IZOLACJI</span><b>NARUSZONY</b></div></section>
 <div id="labels"><div class="label" id="label-core">RDZEŃ OSTATECZNEJ OPINII<small>01 / KRYSZTAŁ PAMIĘCI</small></div><div class="label" id="label-plate">POWŁOKA OBSYDIANOWA<small>02 / PŁYTY OCHRONNE</small></div><div class="label" id="label-eye">SFERA ODPOWIEDZIALNOŚCI<small>03 / MECHANICZNE OKO</small></div><div class="label" id="label-ring">PIERŚCIEŃ WŁAŚCIWOŚCI<small>04 / ZAWIESZENIE ŻYROSKOPOWE</small></div></div>
 <footer class="bottom ui"><div><div class="view-controls"><div class="switch" aria-label="Tryb ekspozycji"><button id="relic" aria-pressed="true">Relikwia</button><button id="anatomy" aria-pressed="false">Anatomia</button></div><button id="reset" class="icon" title="Reset widoku · R" aria-label="Reset widoku"><svg viewBox="0 0 20 20"><path d="M4 8a6 6 0 1 1 0 5M4 3v5h5"/></svg></button></div><div class="interaction"><span>Przeciągnij · obrót</span><span>Scroll · zbliżenie</span></div></div><div class="awakening"><button class="hold" id="awaken" disabled><b><span class="star">✧</span><span id="awaken-text">Obudź artefakt</span></b><small>SPACJA</small></button><div class="hold-hint">PRZYTRZYMAJ, ABY OBUDZIĆ. PUŚĆ, ABY ZERWAĆ PIECZĘĆ.</div></div><div class="footer-right"><div class="engine"><span class="dot"></span> MATERIA ŻYWA / 3D</div><div>FIKCYJNY ARTEFAKT · SATYRA</div></div></footer>
 <div id="verdict" role="status" aria-live="polite"><small>ORZECZENIE VII / OSTATECZNE</small><strong>Nie stwierdzono nieprawidłowości.</strong><span>ODPOWIEDZIALNOŚĆ PRZEKAZANO WEDŁUG WŁAŚCIWOŚCI.</span></div>
 <button id="cinema-exit">Wróć do relikwiarza &nbsp; [ H ]</button>
 <div class="phase-strip ui" id="phase-strip"><span class="phase-index" id="phase-index">00</span><div><span id="phase-name">KONTAKT</span><small id="phase-caption">OBIEKT ROZPOZNAJE OBSERWATORA</small></div><button id="abort" title="Przerwij sekwencję · Esc">Uśpij <span>esc</span></button></div><div id="whisper" aria-live="polite"></div><div id="startup"><div class="start-card"><svg viewBox="0 0 40 64" aria-hidden="true"><path d="M20 1 34 21 39 32 34 43 20 63 6 43 1 32 6 21Z M20 1v62 M6 21l28 22M34 21 6 43"/><circle cx="20" cy="32" r="8"/></svg><h2 id="startup-title">Relikwiarz czeka.</h2><p id="startup-message">Ten model wymaga działającego JavaScript i WebGL.<br>Otwórz plik w pełnej przeglądarce, nie w podglądzie załącznika.</p><p class="note" id="startup-note">Na komputerze: pobierz HTML i otwórz go w przeglądarce.<br>Podgląd tego pliku nie jest animacją ani modelem 3D.</p><code id="error-detail"></code><noscript><p>JavaScript nie jest uruchamiany w tym podglądzie. Scena 3D nie wystartuje tutaj.</p></noscript></div></div>
-<dialog class="modal" id="info"><button class="icon close" id="close-help" aria-label="Zamknij instrukcję">×</button><div class="eyebrow">INSTRUKCJA OBSŁUGI / VII</div><h2>To nie jest już przedmiot.</h2><p>Oko obserwuje kursor, płyty poruszają się w rytmie oddechu, a mechanizm reaguje z bezwładnością. <b>Anatomia</b> odsłania konstrukcję. Przytrzymaj przycisk lub spację, aby ładować rdzeń, i puść. Krótkie kliknięcie uruchamia pełne przebudzenie automatycznie. Sekwencję przerwiesz klawiszem <b>Esc</b> lub przyciskiem <b>Uśpij</b>.</p><dl><div><dt>Przeciągnij / strzałki</dt><dd>Obrót dookoła modelu</dd></div><div><dt>Scroll / szczypanie / + −</dt><dd>Zbliżenie</dd></div><div><dt>Spacja / przycisk</dt><dd>Ładowanie / uwolnienie</dd></div><div><dt>A / H / M / R</dt><dd>Anatomia / kino / dźwięk / reset</dd></div></dl><div class="quality"><label for="quality">Jakość renderowania</label><select id="quality"><option value="auto">Automatyczna</option><option value="high">Wysoka</option><option value="eco">Oszczędna</option></select></div><div class="setting-row"><label for="comfort">Łagodniejsze efekty<span>Bez drgań kamery i z łagodniejszym rozbłyskiem.</span></label><input id="comfort" type="checkbox" role="switch"></div><div class="setting-row"><label for="volume">Głośność relikwii<span>Dźwięk włączasz ikoną głośnika lub klawiszem M.</span></label><input id="volume" type="range" min="0" max="100" value="50" aria-label="Głośność relikwii"></div><p class="fine sound-note">Niskie drony, oddech i długi pogłos. Zacznij cicho; słuchawki są opcjonalne. Bez zapętlonych błysków stroboskopowych.</p><p class="fine">Wszystkie części obiektu są siatkami 3D. Materiały, żyłki, światło i pył są generowane w kodzie. Bez fotografii, bez bibliotek i bez pobierania zasobów z internetu. Fikcyjny przedmiot i fikcyjne odczyty; lore jest satyrą, nie opisem rzeczywistej instytucji.</p><p class="fine">Wersja IIII · HTML / CSS / JavaScript / WebGL 2 / Web Audio<br>Niektóre podglądy plików nie uruchamiają skryptów. W takim podglądzie żaden interaktywny model nie wystartuje.</p></dialog>
+<dialog class="modal" id="info"><button class="icon close" id="close-help" aria-label="Zamknij instrukcję">×</button><div class="eyebrow">INSTRUKCJA OBSŁUGI / VII</div><h2>To nie jest już przedmiot.</h2><p>Oko obserwuje kursor, ciężkie płyty poruszają się z bezwładnością, a podstawa otoczona jest czarną wodą reagującą na każdy impuls. <b>Anatomia</b> odsłania konstrukcję. Przytrzymaj przycisk lub spację, aby ładować rdzeń, i puść. Krótkie kliknięcie uruchamia pełne przebudzenie automatycznie. Sekwencję przerwiesz klawiszem <b>Esc</b> lub przyciskiem <b>Uśpij</b>.</p><dl><div><dt>Przeciągnij / strzałki</dt><dd>Obrót dookoła modelu</dd></div><div><dt>Scroll / szczypanie / + −</dt><dd>Zbliżenie</dd></div><div><dt>Spacja / przycisk</dt><dd>Ładowanie / uwolnienie</dd></div><div><dt>A / H / M / R</dt><dd>Anatomia / kino / dźwięk / reset</dd></div></dl><div class="setting-row"><label for="comfort">Łagodniejsze efekty<span>Bez drgań kamery i z łagodniejszym rozbłyskiem.</span></label><input id="comfort" type="checkbox" role="switch"></div><div class="setting-row"><label for="volume">Głośność relikwii<span>Dźwięk włączasz ikoną głośnika lub klawiszem M.</span></label><input id="volume" type="range" min="0" max="100" value="50" aria-label="Głośność relikwii"></div><p class="fine sound-note">Niskie drony, kamienny pogłos, metaliczny rezonans i ciemna woda. Zacznij cicho; słuchawki są opcjonalne. Bez zapętlonych błysków stroboskopowych.</p><p class="fine">Wszystkie części obiektu są siatkami 3D. Materiały, żyłki, światło i pył są generowane w kodzie. Bez fotografii, bez bibliotek i bez pobierania zasobów z internetu. Fikcyjny przedmiot i fikcyjne odczyty; lore jest satyrą, nie opisem rzeczywistej instytucji.</p><p class="fine">Wersja IV.1 · poprawione uruchamianie · HTML / CSS / JavaScript / WebGL 2 / Web Audio<br>Niektóre podglądy plików nie uruchamiają skryptów. W takim podglądzie żaden interaktywny model nie wystartuje.</p></dialog>
 <script>
-/* ORZECZNIK ABSOLUTNY III. Original procedural model and native WebGL renderer.
+/* ORZECZNIK ABSOLUTNY IV. Procedural model, ritual water basin, native WebGL renderer.
    All geometry and all materials are generated locally. No images or libraries.
    Controls: drag / pinch, Space, A anatomy, H cinema, M audio, R reset. */
 (function () {
 'use strict';
 const $=id=>document.getElementById(id), canvas=$('scene');
 function fail(message,detail=''){
- document.body.classList.remove('ready');$('startup-title').textContent='Scena 3D nie wystartowała.';
+ const wasReady=document.body.classList.contains('ready');window.__renderReady=false;
+ document.body.classList.remove('ready');$('startup-title').textContent=wasReady?'Renderowanie zostało przerwane.':'Scena 3D nie wystartowała.';
+ $('startup-note').textContent='Zachowaj szczegóły błędu poniżej, aby można było ustalić jego przyczynę.';
  $('startup-message').textContent=message;$('error-detail').textContent=detail;$('awaken').disabled=true;
 }
-window.addEventListener('error',e=>fail('Wystąpił błąd podczas uruchamiania modelu. Otwórz plik w pełnej przeglądarce z obsługą WebGL 2.',String(e.message||'Nieznany błąd')));
+window.addEventListener('error',e=>fail('Wystąpił błąd skryptu sceny. Szczegóły poniżej pozwalają wskazać przyczynę — sam komunikat nie oznacza problemu z przeglądarką.',String(e.message||'Nieznany błąd')));
 let gl;
 try{gl=canvas.getContext('webgl2',{alpha:false,antialias:false,depth:true,powerPreference:'high-performance',preserveDrawingBuffer:false});}catch(e){}
 if(!gl){fail('Ta przeglądarka lub podgląd pliku nie udostępnia WebGL 2. Otwórz HTML w pełnej przeglądarce z włączoną akceleracją sprzętową.');return;}
-canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();fail('Przeglądarka przerwała renderowanie. Zamknij zbędne karty, przeładuj plik i wybierz jakość „Oszczędna”.');running=false;});
+canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();fail('Przeglądarka przerwała renderowanie. Zamknij zbędne karty i przeładuj plik. Jakość w tym wydaniu jest stała.');running=false;});
 canvas.addEventListener('webglcontextrestored',()=>location.reload());
 $('startup-title').textContent='Budowanie relikwiarza.';$('startup-message').textContent='Siatki, materiały, oświetlenie. Wszystko powstaje lokalnie.';
 const PI=Math.PI,TAU=2*PI,clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),mix=(a,b,t)=>a+(b-a)*t;
@@ -182,6 +183,7 @@ meshes.gimbal=build(b=>{
 meshes.floorSeal=build(b=>{
  b.at(C(M.T(0,-3.318,0),M.Rx(PI/2)),()=>{b.band(1.11,.005,.006,10,1,144);b.band(1.975,.004,.005,10,1,144);for(let i=0;i<8;i++)b.at(M.Rz(i*TAU/8),()=>{b.tube([[.35,0,.003],[.71,.07,.003],[1.09,0,.003]],.003,10,4);});});
 });
+meshes.pool=build(b=>b.quad([-6.2,-4.013,6.2],[6.2,-4.013,6.2],[6.2,-4.013,-6.2],[-6.2,-4.013,-6.2],12,[[0,1,0],[0,1,0],[0,1,0],[0,1,0]]));
 // Long gallery ribs create parallax and real perspective without stealing the silhouette.
 meshes.gallery=build(b=>{
  for(const side of [-1,1])for(let j=0;j<4;j++){
@@ -222,6 +224,23 @@ vec3 environment(vec3 r,float rough){vec3 c=mix(vec3(.018,.022,.026),vec3(.11,.1
  c+=vec3(1.,.77,.40)*softbox(r,normalize(vec3(.1,4.,-.6)),.60,.35,rough)*3.;return c;}
 vec3 brdf(vec3 n,vec3 v,vec3 l,vec3 base,float metal,float rough,vec3 li){vec3 h=normalize(v+l);float nv=max(dot(n,v),.003),nl=max(dot(n,l),.001),nh=max(dot(n,h),.001),vh=max(dot(v,h),0.);float a=rough*rough,a2=a*a,d=a2/(PI*pow(nh*nh*(a2-1.)+1.,2.)+.0001),k=pow(rough+1.,2.)/8.,g=(nv/(nv*(1.-k)+k))*(nl/(nl*(1.-k)+k));vec3 f0=mix(vec3(.045),base,metal),f=f0+(1.-f0)*pow(1.-vh,5.);return ((1.-f)*(1.-metal)*base/PI+d*g*f/max(4.*nv*nl,.001))*li*nl;}
 float shadow(vec3 n){if(uReflection>.5)return 1.;vec3 q=vShadow.xyz/vShadow.w*.5+.5;if(q.x<0.||q.x>1.||q.y<0.||q.y>1.||q.z>1.)return 1.;float b=.00065+.0012*(1.-max(dot(n,normalize(vec3(-5,8,6))),0.));float s=0.;vec2 stepSize=1./vec2(textureSize(uShadow,0));for(int x=-1;x<=1;x++)for(int y=-1;y<=1;y++){float d=texture(uShadow,q.xy+vec2(x,y)*stepSize*1.15).r;s+=q.z-b>d?.13:1.;}return s/9.;}
+
+float waterHeight(vec2 x){
+ float r=length(x);
+ float basin=1.-smoothstep(5.85,6.35,r);
+ float longWave=sin(r*7.4-uTime*1.28+fbm(vec3(x*.28,uTime*.03))*5.)*.008;
+ float chop=(sin(x.x*2.1+uTime*.41)+sin(x.y*2.7-uTime*.37))*0.0017;
+ float ring=sin(r*16.5-uTime*(2.3+uShock*4.))+exp(-max(0.,r-(1.2+uAfter*2.4))*1.2);
+ float shockRing=sin(r*18.0-uTime*(2.8+uShock*5.2))*exp(-abs(r-(1.2+uShock*4.2+uAfter*1.7))*1.7)*(.004+.018*uShock+.010*uEnergy);
+ return basin*(longWave+chop+shockRing);
+}
+vec3 waterNormal(vec2 x){
+ float e=.055;
+ float hx=waterHeight(x+vec2(e,0.))-waterHeight(x-vec2(e,0.));
+ float hz=waterHeight(x+vec2(0.,e))-waterHeight(x-vec2(0.,e));
+ return normalize(vec3(-hx/(2.*e),1.,-hz/(2.*e)));
+}
+
 void main(){
  vec3 q=vLocal,p=vWorld,n=normalize(vNormal),v=normalize(uCam-p);float nv=max(dot(n,v),.001),id=vMat;
  float rough=.25,metal=.92,occ=1.;vec3 base=vec3(.15,.17,.20),emission=vec3(0.);float alpha=1.;
@@ -304,6 +323,24 @@ void main(){
   float crawl=.6+.4*sin(q.y*8.-uTime*1.7+q.x*3.);emission=vec3(1.9,.62,.065)*(.10+uEnergy*1.25+uBeat*.20+uShock*2.)*crawl*(1.-uCollapse*.92);
  }
 
+
+ else if(id>11.5&&id<12.5){
+  vec2 wp=p.xz;float r=length(wp);if(r>6.35||r<1.85) discard;
+  vec3 wn=waterNormal(wp);n=wn;nv=max(dot(n,v),.001);
+  vec2 uv=gl_FragCoord.xy/uResolution+n.xz*.055+wp*.0009;
+  vec3 refl=texture(uMirror,uv).rgb;
+  vec3 envW=environment(reflect(-v,n),.018);
+  vec3 deep=vec3(.003,.007,.010),shallow=vec3(.010,.016,.021);
+  float h=waterHeight(wp),crest=smoothstep(.005,.016,abs(h));
+  base=mix(deep,shallow,.45+.45*clamp(h*22.+.5,0.,1.));
+  float fr=.03+.92*pow(1.-nv,5.);
+  vec3 c=mix(base,refl*1.02+envW*.22,fr);
+  float shrine=exp(-max(r-2.1,0.)*.48);
+  c+=vec3(.16,.09,.025)*(uEnergy*.10+uShock*.35+uAfter*.08)*shrine;
+  c+=vec3(.12,.10,.07)*crest*.11;
+  c*=1.-smoothstep(6.05,6.35,r)*.45;
+  outColor=vec4(c,.97);return;
+ }
  else{base=vec3(.013,.016,.020);rough=.74;metal=.08;occ=.64;}
 
  // Tiny procedural imperfections perturb highlights, not the silhouette.
@@ -374,12 +411,13 @@ function disposeRT(rt){if(!rt)return;gl.deleteTexture(rt.t);gl.deleteFramebuffer
 function bind(rt){gl.bindFramebuffer(gl.FRAMEBUFFER,rt?rt.fb:null);gl.viewport(0,0,rt?rt.w:canvas.width,rt?rt.h:canvas.height);}
 const shadowSize=1536,shadowTex=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,shadowTex);gl.texImage2D(gl.TEXTURE_2D,0,gl.DEPTH_COMPONENT24,shadowSize,shadowSize,0,gl.DEPTH_COMPONENT,gl.UNSIGNED_INT,null);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.NEAREST);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.NEAREST);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);const shadowFB=gl.createFramebuffer();gl.bindFramebuffer(gl.FRAMEBUFFER,shadowFB);gl.framebufferTexture2D(gl.FRAMEBUFFER,gl.DEPTH_ATTACHMENT,gl.TEXTURE_2D,shadowTex,0);gl.drawBuffers([gl.NONE]);gl.readBuffer(gl.NONE);
 const shadowVP=M.mul(M.O(-5.9,5.9,-7,7,.1,32),M.look([-6,9,7],[0,-.5,0]));
-let mainRT,mirrorRT,mirrorBlur,volumeRT,msaa=null,blooms=[],W=0,H=0,quality='auto',qualityScale=1;
-const params=new URLSearchParams(location.search);if(params.get('quality'))quality=params.get('quality');$('quality').value=quality;
-function resize(){let width=innerWidth,height=innerHeight;const mobile=width<651;let ratio=quality==='high'?Math.min(Math.max(devicePixelRatio||1,1.65),2):quality==='eco'?Math.min(devicePixelRatio||1,1)*.72:Math.min(Math.max(devicePixelRatio||1,1.15),mobile?1.35:1.55)*qualityScale;let w=Math.max(2,Math.round(width*ratio)),h=Math.max(2,Math.round(height*ratio));if(w===W&&h===H)return;W=w;H=h;canvas.width=w;canvas.height=h;for(const rt of [mainRT,mirrorRT,mirrorBlur,volumeRT,...blooms.flat()])disposeRT(rt);mainRT=target(w,h);if(!mainRT.fp)floatRT=false;const vs=quality==='high'?3:quality==='eco'?5:4;volumeRT=target(Math.max(2,Math.floor(w/vs)),Math.max(2,Math.floor(h/vs)),false);
+// Fixed high-quality preset. There is intentionally no quality control or URL override.
+const RENDER_QUALITY='high';
+let mainRT,mirrorRT,mirrorBlur,volumeRT,msaa=null,blooms=[],W=0,H=0;
+function resize(){let width=innerWidth,height=innerHeight;const ratio=Math.min(Math.max(devicePixelRatio||1,1.65),2);let w=Math.max(2,Math.round(width*ratio)),h=Math.max(2,Math.round(height*ratio));if(w===W&&h===H)return;W=w;H=h;canvas.width=w;canvas.height=h;for(const rt of [mainRT,mirrorRT,mirrorBlur,volumeRT,...blooms.flat()])disposeRT(rt);mainRT=target(w,h);if(!mainRT.fp)floatRT=false;const vs=3;volumeRT=target(Math.max(2,Math.floor(w/vs)),Math.max(2,Math.floor(h/vs)),false);
  if(msaa){gl.deleteFramebuffer(msaa.fb);gl.deleteRenderbuffer(msaa.color);gl.deleteRenderbuffer(msaa.depth);msaa=null;}
  const samples=gl.getInternalformatParameter(gl.RENDERBUFFER,floatRT?gl.RGBA16F:gl.RGBA8,gl.SAMPLES);
- const count=Math.min(quality==='high'?4:quality==='eco'?1:2,samples.length?samples[0]:0);
+ const count=Math.min(4,samples.length?samples[0]:0);
  if(count>1){const fb=gl.createFramebuffer(),color=gl.createRenderbuffer(),depth=gl.createRenderbuffer();gl.bindFramebuffer(gl.FRAMEBUFFER,fb);gl.bindRenderbuffer(gl.RENDERBUFFER,color);gl.renderbufferStorageMultisample(gl.RENDERBUFFER,count,floatRT?gl.RGBA16F:gl.RGBA8,w,h);gl.framebufferRenderbuffer(gl.FRAMEBUFFER,gl.COLOR_ATTACHMENT0,gl.RENDERBUFFER,color);gl.bindRenderbuffer(gl.RENDERBUFFER,depth);gl.renderbufferStorageMultisample(gl.RENDERBUFFER,count,gl.DEPTH_COMPONENT24,w,h);gl.framebufferRenderbuffer(gl.FRAMEBUFFER,gl.DEPTH_ATTACHMENT,gl.RENDERBUFFER,depth);if(gl.checkFramebufferStatus(gl.FRAMEBUFFER)===gl.FRAMEBUFFER_COMPLETE)msaa={fb,color,depth,w,h};else{gl.deleteFramebuffer(fb);gl.deleteRenderbuffer(color);gl.deleteRenderbuffer(depth);}}
  let mw=Math.min(650,Math.max(240,Math.round(w*.60))),mh=Math.max(160,Math.round(mw*h/w));mirrorRT=target(mw,mh);mirrorBlur=target(mw,mh,false);blooms=[];for(let i=0;i<3;i++){let s=Math.pow(2,i+1);blooms.push([target(Math.max(2,Math.floor(w/s)),Math.max(2,Math.floor(h/s)),false),target(Math.max(2,Math.floor(w/s)),Math.max(2,Math.floor(h/s)),false)]);}}
 // 3D volumetric scattering and procedural electrical discharge. No screen-space circles.
@@ -464,7 +502,7 @@ void main(){float type=floor(aSeed.w*3.);vec3 p=position(uTime);vec4 clip=uP*uV*
  if(uRelease>=0.&&type>.5){float age=uRelease-.77;vAlpha=age<0.?uEnergy*.32:exp(-max(0.,age)*.88)*(.4+aSeed.w*.4);}
 }`;
 const particleFS=`#version 300 es
-precision highp float;in vec2 vUV;in float vAlpha,vHeat;out vec4 outColor;void main(){float d=dot(vUV,vUV);float a=exp(-d*3.6)*(1.-smoothstep(.7,1.,abs(vUV.x)))*(1.-smoothstep(.7,1.,abs(vUV.y)))*vAlpha;outColor=vec4(mix(vec3(.55,.55,.51),vec3(4.2,1.3,.14),vHeat),a);}`;
+precision highp float;in vec2 vUV;in float vAlpha,vHeat;out vec4 outColor;void main(){float d=dot(vUV,vUV);float a=exp(-d*4.9)*(1.-smoothstep(.92,1.10,d))*vAlpha;vec3 c=mix(vec3(.52,.53,.50),vec3(4.0,1.15,.12),vHeat);outColor=vec4(c,a);}`;
 const particleProg=program(particleVS,particleFS),particleVAO=gl.createVertexArray();gl.bindVertexArray(particleVAO);const particleBuf=gl.createBuffer(),pa=[],particleCount=1800;
 for(let i=0;i<particleCount;i++)pa.push((rand()-.5)*2,(rand()-.5)*2,(rand()-.5)*2,rand());gl.bindBuffer(gl.ARRAY_BUFFER,particleBuf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(pa),gl.STATIC_DRAW);gl.enableVertexAttribArray(0);gl.vertexAttribPointer(0,4,gl.FLOAT,false,16,0);gl.vertexAttribDivisor(0,1);gl.bindVertexArray(null);
 function drawEffects(root){
@@ -472,7 +510,7 @@ function drawEffects(root){
  const uniforms=p=>{gl.useProgram(p.p);m4(p,'uV',V);m4(p,'uP',P);f1(p,'uTime',time);f1(p,'uEnergy',state.energy);f1(p,'uShock',state.shock);f1(p,'uRelease',state.releaseAge);};
  if(state.energy>.08||state.releaseAge>=0){uniforms(boltProg);m4(boltProg,'uRoot',root);f1(boltProg,'uOpen',state.open);gl.bindVertexArray(boltVAO);gl.drawArrays(gl.TRIANGLES,0,boltCount);}
  if(state.releaseAge>.77&&state.releaseAge<4.8){uniforms(waveProg);gl.bindVertexArray(waveVAO);gl.drawArrays(gl.TRIANGLES,0,waveCount);}
- uniforms(particleProg);f1(particleProg,'uPixel',W/innerWidth);f1(particleProg,'uBeat',state.beat);f2(particleProg,'uResolution',W,H);gl.bindVertexArray(particleVAO);gl.drawArraysInstanced(gl.TRIANGLES,0,6,quality==='eco'?950:particleCount);
+ uniforms(particleProg);f1(particleProg,'uPixel',W/innerWidth);f1(particleProg,'uBeat',state.beat);f2(particleProg,'uResolution',W,H);gl.bindVertexArray(particleVAO);gl.drawArraysInstanced(gl.TRIANGLES,0,6,particleCount);
  gl.depthMask(true);gl.disable(gl.BLEND);
 }
 
@@ -483,7 +521,7 @@ const state={yaw:.085,pitch:.16,dist:13.45,targetYaw:.085,targetPitch:.16,target
  time:0,freeze:false,cinema:false,dirty:true,beat:0,beatPhase:0,life:0,breath:0,collapse:0,after:0,open:0,
  gazeX:0,gazeY:0,gazeTX:0,gazeTY:0,blink:0,strength:1,phase:'idle',root:M.I()};
 const joints=bladeList.map((a,i)=>({p:0,v:0,lag:i*.115,phase:i*1.81}));
-let gpuSync=null,running=true,firstFrame=true,previous=performance.now(),time=0,spin=0,verdictUntil=0,clickDown=0,audioEnabled=false,audio=null,qualityFrames=0,qualitySum=0,windowFocused=true,uiStamp=0;
+let gpuSync=null,running=true,firstFrame=true,previous=performance.now(),time=0,spin=0,verdictUntil=0,clickDown=0,audioEnabled=false,audio=null,windowFocused=true,uiStamp=0;
 const pointerMap=new Map();let previousPinch=0;
 const smooth=(a,b,x)=>{x=clamp((x-a)/(b-a),0,1);return x*x*(3-2*x);};
 $('comfort').checked=reduceMotion;
@@ -520,7 +558,6 @@ $('awaken').addEventListener('click',e=>{if(e.detail===0&&!state.holding){if(sta
 $('abort').onclick=abortRitual;$('anatomy').onclick=()=>anatomy(true);$('relic').onclick=()=>anatomy(false);$('reset').onclick=resetView;$('cinema').onclick=cinema;$('cinema-exit').onclick=cinema;
 $('help').onclick=()=>{releaseCharge(false);$('info').showModal();};$('close-help').onclick=()=>$('info').close();
 $('info').addEventListener('click',e=>{if(e.target===$('info')){const r=$('info').getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)$('info').close();}});
-$('quality').onchange=e=>{quality=e.target.value;qualityScale=1;state.dirty=true;resize();};
 function syncAudioButton(){ $('sound').setAttribute('aria-pressed',String(audioEnabled));$('sound').setAttribute('aria-label',audioEnabled?'Wyłącz dźwięk':'Włącz dźwięk');$('sound-path').setAttribute('d',audioEnabled?'M13 7c2 1 2 5 0 6m2-9c5 3 5 9 0 12':'m13 7 5 6m0-6-5 6');}
 function audioToggle(){audioEnabled=!audioEnabled;syncAudioButton();if(audioEnabled)initAudio();else if(audio)audio.master.gain.setTargetAtTime(0,audio.ctx.currentTime,.15);}
 $('sound').onclick=audioToggle;$('volume').oninput=()=>{if(audio)audio.volume=Number($('volume').value)/100;};
@@ -537,8 +574,8 @@ window.addEventListener('focus',()=>{windowFocused=true;previous=performance.now
 document.addEventListener('visibilitychange',()=>{previous=performance.now();if(document.hidden){abortRitual();pointerMap.clear();if(audio)audio.ctx.suspend().catch(()=>{});}else if(audio&&audioEnabled)audio.ctx.resume().catch(()=>{});});
 function stepState(dt,clockDt=dt){
  state.time=time;
- if(state.autoStart>=0){const age=time-state.autoStart;state.energy=clamp(age/3.6,0,1);if(age>=4.05)release();}
- else if(state.holding){state.energy=clamp(state.energy+clockDt*.27,0,1);if(time-state.holdAt>8.6)release();}
+ if(state.autoStart>=0){const age=time-state.autoStart;state.energy=clamp(age/4.2,0,1);if(age>=4.7)release();}
+ else if(state.holding){state.energy=clamp(state.energy+clockDt*.24,0,1);if(time-state.holdAt>9.8)release();}
  else if(state.releaseAt<0){state.energy=Math.max(0,state.energy-clockDt*.47);}
  state.releaseAge=state.releaseAt<0?-1:time-state.releaseAt;
  let a=state.releaseAge;state.collapse=0;state.shock=0;state.after=0;
@@ -573,14 +610,11 @@ function stepState(dt,clockDt=dt){
  if(verdictUntil&&time>verdictUntil){$('verdict').classList.remove('show');verdictUntil=0;}
 }
 function updateUI(){
- const phase=state.phase,e=Math.round(state.energy*97+3),active=phase!=='idle';document.body.classList.toggle('ritual',active);
- $('energy').textContent=String(e).padStart(2,'0');$('bar').style.width=e+'%';$('awaken').style.setProperty('--charge',state.energy.toFixed(3));
+ const phase=state.phase,active=phase!=='idle';document.body.classList.toggle('ritual',active);
+ $('awaken').style.setProperty('--charge',state.energy.toFixed(3));
  const names={idle:['00','KONTAKT','OBIEKT ROZPOZNAJE OBSERWATORA'],charging:['01','PRZEBUDZENIE','NIE PRZERYWAJ KONTAKTU'],collapse:['02','KOLAPS','WSZYSTKO WCIĄŻ JEST W NORMIE'],rupture:['03','ZERWANIE PIECZĘCI','UTRACONO KONTROLĘ NAD OBIEKTEM'],aftermath:['04','OSOBLIWOŚĆ','ODPOWIEDZIALNOŚĆ POZA ZASIĘGIEM'],settling:['05','PONOWNA IZOLACJA','TO NIE ZNACZY, ŻE ŚPI']},n=names[phase]||names.idle;
  $('phase-index').textContent=n[0];$('phase-name').textContent=n[1];$('phase-caption').textContent=n[2];
- $('status').textContent=phase==='idle'?'ODDYCHA · OBSERWUJE':phase==='charging'?(state.energy>.86?'PUŚĆ · PRZERWIJ PIECZĘĆ':'POWŁOKA REAGUJE'):n[1];
  $('awaken-text').textContent=state.releaseAt>=0?'Uśpij artefakt':state.energy>.88?'Puść. Nie ma odwrotu.':state.energy>.04?'Nie puszczaj jeszcze':'Obudź artefakt';
- $('pulse-value').textContent=String(Math.round((.76+state.energy*.96)*60));
- const pts=[];for(let i=0;i<=100;i++){const p=((i/100)*2.25-state.beatPhase+2)%1;let pulse=Math.exp(-Math.pow((p-.16)/.037,2))*14-Math.exp(-Math.pow((p-.235)/.028,2))*9+Math.exp(-Math.pow((p-.32)/.054,2))*4;pts.push((i===0?'M':'L')+(i*1.2).toFixed(1)+' '+(15-pulse*(.63+state.energy*.37)).toFixed(1));}$('heartbeat').setAttribute('d',pts.join(''));
 }
 
 /* THE RELIC'S VOICE. Procedural Web Audio: beating subharmonics, inharmonic bowed
@@ -614,12 +648,12 @@ function createRelicAudio(ctx){
   A.voices.push({osc,gain,pan,f,amp:amplitudes[i],filter:toneFilter});
  });
  // Formant bands produce an indistinct inhalation, never intelligible speech.
- const breath=ctx.createBufferSource(),breathGate=ctx.createGain();breath.buffer=noise;breath.loop=true;breath.playbackRate.value=.78;breathGate.gain.value=.025;breath.connect(breathGate);
+ const breath=ctx.createBufferSource(),breathGate=ctx.createGain();breath.buffer=noise;breath.loop=true;breath.playbackRate.value=.78;breathGate.gain.value=.014;breath.connect(breathGate);
  A.formants=[];
- for(let i=0;i<3;i++){const f=ctx.createBiquadFilter(),g=ctx.createGain(),p=panner((i-1)*.75);f.type='bandpass';f.frequency.value=[330,910,1830][i];f.Q.value=[3.6,6.2,8.0][i];g.gain.value=[.72,.38,.17][i];breathGate.connect(f);f.connect(g);g.connect(p);p.connect(input);A.formants.push({f,p});}
+ for(let i=0;i<3;i++){const f=ctx.createBiquadFilter(),g=ctx.createGain(),p=panner((i-1)*.75);f.type='bandpass';f.frequency.value=[330,910,1830][i];f.Q.value=[3.6,6.2,8.0][i];g.gain.value=[.40,.18,.07][i];breathGate.connect(f);f.connect(g);g.connect(p);p.connect(input);A.formants.push({f,p});}
  breath.start();A.breath=breathGate;
  // Low, strained reed choir, heard mostly through the room.
- const real=new Float32Array(32),imag=new Float32Array(32);for(let k=1;k<32;k++)imag[k]=Math.pow(k,-1.45)*(k%2?1:.30);const wave=ctx.createPeriodicWave(real,imag),choirGate=ctx.createGain();choirGate.gain.value=.012;
+ const real=new Float32Array(32),imag=new Float32Array(32);for(let k=1;k<32;k++)imag[k]=Math.pow(k,-1.45)*(k%2?1:.30);const wave=ctx.createPeriodicWave(real,imag),choirGate=ctx.createGain();choirGate.gain.value=.006;
  A.choir=[];
  for(let i=0;i<3;i++){const o=ctx.createOscillator(),f=ctx.createBiquadFilter(),p=panner((i-1)*.48);o.setPeriodicWave(wave);o.frequency.value=[64.19,67.13,96.56][i];f.type='bandpass';f.frequency.value=530+i*220;f.Q.value=2.7;o.connect(f);f.connect(p);p.connect(choirGate);o.start();A.choir.push({o,f});}choirGate.connect(send);A.choirGate=choirGate;
  function track(src,nodes,finish){const item={src,nodes};A.events.add(item);src.onended=()=>{for(const n of nodes)try{n.disconnect();}catch(e){}A.events.delete(item);};src.stop(finish);}
@@ -632,16 +666,16 @@ function createRelicAudio(ctx){
   g.gain.setValueAtTime(.00001,start);g.gain.exponentialRampToValueAtTime(Math.max(.0001,amp),start+dur*(reverse?.86:.065));g.gain.exponentialRampToValueAtTime(.00002,start+dur);source.connect(filter);filter.connect(g);g.connect(p);p.connect(input);source.start(start,rnd()*3);track(source,[source,filter,g,p],start+dur+.05);
  }
  function bell(start,amp,pan=0,fund=128){for(const [ratio,decay,level] of [[1,4.1,.65],[1.479,3.5,.40],[2.083,2.8,.26],[2.761,2.1,.13],[4.127,1.7,.072],[6.321,1.2,.027]])tone(fund*ratio,start,decay,amp*level,'sine',pan,null,.006);}
- A.heartbeat=(e,when=ctx.currentTime)=>{const t=when;tone(61,t,.24,.075+e*.085,'sine',-.11,33,.012);tone(88,t+.17,.17,.035+e*.035,'sine',.14,49,.008);};
+ A.heartbeat=(e,when=ctx.currentTime)=>{const t=when;tone(43,t,.34,.030+e*.040,'sine',-.05,24,.020);tone(171,t+.06,1.1,.008+e*.010,'triangle',.17,83,.004);};
  A.discharge=(strength,when=ctx.currentTime)=>{
   const t=when;
-  air(t,.77,.40*strength,730,95,-.12,true);tone(71,t,.76,.14,'sine',0,27,.09);
-  const hit=t+.77;tone(111,hit,2.9,.61*strength,'sine',0,26,.010);tone(57,hit+.065,4.2,.22*strength,'sine',-.3,29,.017);
-  air(hit,1.7,.74*strength,1700,125,0);air(hit+.16,3.9,.35*strength,430,84,.63);
-  bell(hit,.15*strength,-.47,117.2);bell(hit+.087,.13*strength,.56,122.9);
-  for(let i=0;i<6;i++){const at=hit+.28+i*.37;tone(278+i*67,at,2.1+i*.17,.036*strength,'sine',Math.sin(i*1.7)*.78,71+i*23,.027);}
-  air(hit+.23,3.8,.20*strength,1230,315,-.61,true);
-  bell(hit+3.4,.047*strength,.38,83.31);air(hit+5.2,2.1,.13*strength,210,610,.48,true);
+  air(t,.92,.18*strength,420,62,-.08,true);tone(49,t,.92,.10,'sine',0,24,.16);
+  const hit=t+.92;tone(84,hit,3.8,.42*strength,'sine',0,22,.018);tone(39,hit+.05,5.4,.19*strength,'sine',-.24,20,.025);
+  air(hit,2.6,.30*strength,980,120,0);air(hit+.18,4.9,.16*strength,310,74,.52);
+  bell(hit,.09*strength,-.36,92.6);bell(hit+.11,.08*strength,.42,98.2);
+  for(let i=0;i<5;i++){const at=hit+.35+i*.48;tone(146+i*39,at,2.7+i*.22,.018*strength,'triangle',Math.sin(i*1.3)*.62,58+i*17,.018);}
+  air(hit+.35,4.4,.11*strength,760,210,-.42,true);
+  bell(hit+4.0,.030*strength,.28,73.31);air(hit+5.4,2.8,.08*strength,180,420,.41,true);
  };
  A.abort=()=>{const t=ctx.currentTime;for(const item of A.events){try{item.src.stop(t+.035);}catch(e){}};};
  const target=(param,value,t,tau=.09)=>{param.cancelScheduledValues(t);param.setTargetAtTime(value,t,tau);};
@@ -671,10 +705,10 @@ function initAudio(){
 function audioDischarge(strength){if(audio&&audioEnabled)audio.discharge(strength);}
 
 function objects(t){
- const motion=reduceMotion?.14:1,bob=(Math.sin(t*.57)*.020+state.breath*.032+state.beat*.007)*motion;
- const root=C(M.T(0,bob,0),M.Rz(Math.sin(t*.22)*.009*motion),M.Ry(Math.sin(t*.19)*.032*motion));state.root=root;
+ const motion=reduceMotion?.14:1,bob=(Math.sin(t*.43)*.013+state.breath*.018+state.beat*.004)*motion;
+ const root=C(M.T(0,bob,0),M.Rz(Math.sin(t*.17)*.004*motion),M.Ry(Math.sin(t*.15)*.018*motion));state.root=root;
  const objs=[],push=(mesh,m,glass=false,environment=false)=>objs.push({mesh,m,glass,environment});
- push(meshes.pedestal,M.I());push(meshes.dais,M.I());push(meshes.floorSeal,M.I());
+ push(meshes.gallery,M.I());push(meshes.architecture,M.I());push(meshes.pedestal,M.I());push(meshes.dais,M.I());push(meshes.pool,M.I());push(meshes.floorSeal,M.I());
  const inhale=1.+state.breath*.010*motion+state.beat*.008*motion;
  push(meshes.crystal,C(root,M.S(.91*inhale,1,.91*inhale),M.Ry(Math.sin(t*.08)*.05)));
  push(meshes.filaments,C(root,M.Ry(t*.052+spin*.25),M.S(1.+state.beat*.035,1,1.+state.beat*.035)));
@@ -692,11 +726,12 @@ function objects(t){
  for(const side of [-1,1])push(meshes.arc,C(root,M.Ry(side*(.28+open*.22)),M.S(side,1,1),M.T(open*.24,0,-.18)));
  for(const y of [-1.1,1.12])push(meshes.vertebra,C(root,M.T(0,y+Math.sign(y)*open*.30,0),M.Ry(Math.sign(y)*spin*.22),M.S(1.+state.beat*.018)));
  push(meshes.cage,C(root,M.Ry(Math.sin(t*.20)*.019+spin*.07)));
- const eyeRoot=C(root,M.T(0,.02+state.beat*.011*motion,.52+open*.44),M.Ry(state.gazeX),M.Rx(-state.gazeY));
- push(meshes.eye,C(eyeRoot,M.Ry(Math.sin(t*.16)*.08+spin*.035)));
- push(meshes.belt,C(eyeRoot,M.Rx(PI/2-.085+Math.sin(t*.15)*.055),M.Ry(.03+open*.15),M.Rz(-t*.029-spin*.48)));
- push(meshes.eyehalo,C(eyeRoot,M.Ry(.55+t*.023+spin*.65),M.Rx(.1)));
- const irisRoot=C(eyeRoot,M.T(0,.014,.538+open*.15));
+ const eyeRoot=C(root,M.T(0,.02+state.beat*.007*motion,.86+open*.18),M.Ry(state.gazeX*.85),M.Rx(-state.gazeY*.85));
+ push(meshes.gimbal,C(eyeRoot,M.Ry(spin*.11+Math.sin(t*.12)*.04),M.Rx(.08)));
+ push(meshes.eye,C(eyeRoot,M.Ry(Math.sin(t*.12)*.045+spin*.020)));
+ push(meshes.belt,C(eyeRoot,M.Rx(PI/2-.085+Math.sin(t*.12)*.032),M.Ry(.02+open*.10),M.Rz(-t*.020-spin*.33)));
+ push(meshes.eyehalo,C(eyeRoot,M.Ry(.55+t*.015+spin*.42),M.Rx(.1)));
+ const irisRoot=C(eyeRoot,M.T(0,.014,.468+open*.08));
  push(meshes.irisCollar,irisRoot);push(meshes.lens,C(irisRoot,M.T(0,0,.019),M.Rz(t*.011)));
  const aperture=state.blink*.079+state.energy*.027+state.collapse*.045-state.shock*.026;
  for(let i=0;i<9;i++)push(meshes.shutter,C(irisRoot,M.Rz(i*TAU/9),M.T(-aperture,aperture*.09,0),M.Rz(aperture*2.2)));
@@ -741,10 +776,10 @@ function frame(ms){
   const objs=objects(t);
   // A large overhead area-light approximation with percentage-closer soft shadows.
   gl.bindFramebuffer(gl.FRAMEBUFFER,shadowFB);gl.viewport(0,0,shadowSize,shadowSize);gl.enable(gl.DEPTH_TEST);gl.depthMask(true);gl.depthFunc(gl.LEQUAL);gl.disable(gl.BLEND);gl.clear(gl.DEPTH_BUFFER_BIT);gl.useProgram(shadowProg.p);m4(shadowProg,'uVP',shadowVP);gl.enable(gl.POLYGON_OFFSET_FILL);gl.polygonOffset(1.2,2.2);
-  for(const o of objs){if(o.glass||o.environment||o.mesh===meshes.filaments||o.mesh===meshes.nerve)continue;m4(shadowProg,'uM',o.m);gl.bindVertexArray(o.mesh.vao);gl.drawArrays(gl.TRIANGLES,0,o.mesh.count);}gl.disable(gl.POLYGON_OFFSET_FILL);
+  for(const o of objs){if(o.glass||o.environment||o.mesh===meshes.pool||o.mesh===meshes.filaments||o.mesh===meshes.nerve)continue;m4(shadowProg,'uM',o.m);gl.bindVertexArray(o.mesh.vao);gl.drawArrays(gl.TRIANGLES,0,o.mesh.count);}gl.disable(gl.POLYGON_OFFSET_FILL);
   // Reflection of the actual animated geometry, independently blurred by the stone.
-  bind(mirrorRT);gl.clearColor(.006,.007,.009,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);setMeshUniforms(t,true);const reflection=C(M.T(0,-8.34,0),M.S(1,-1,1));
-  for(const o of objs){if(o.glass||o.environment||o.mesh===meshes.filaments)continue;drawMesh(o.mesh,M.mul(reflection,o.m));}filter(mirrorRT,mirrorBlur,1.25/mirrorRT.w,.58/mirrorRT.h);
+  bind(mirrorRT);gl.clearColor(.006,.007,.009,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);setMeshUniforms(t,true);const reflection=C(M.T(0,-8.026,0),M.S(1,-1,1));
+  for(const o of objs){if(o.glass||o.environment||o.mesh===meshes.pool||o.mesh===meshes.filaments)continue;drawMesh(o.mesh,M.mul(reflection,o.m));}filter(mirrorRT,mirrorBlur,1.25/mirrorRT.w,.58/mirrorRT.h);
   bind(msaa||mainRT);gl.clearColor(.008,.010,.014,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.disable(gl.DEPTH_TEST);gl.useProgram(bgProg.p);f1(bgProg,'uTime',t);f1(bgProg,'uEnergy',state.energy);f1(bgProg,'uShock',state.shock);f1(bgProg,'uAspect',aspect);f1(bgProg,'uShift',shift);f3(bgProg,'uCam',cameraPos);screen(bgProg);
   gl.enable(gl.DEPTH_TEST);gl.depthMask(true);setMeshUniforms(t);gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);f1(meshProg,'uFloor',1);drawMesh(meshes.floor,M.I());gl.disable(gl.BLEND);f1(meshProg,'uFloor',0);
   for(const o of objs)if(!o.glass)drawMesh(o.mesh,o.m);
@@ -752,16 +787,15 @@ function frame(ms){
   drawEffects(state.root);
   if(msaa){gl.bindFramebuffer(gl.READ_FRAMEBUFFER,msaa.fb);gl.bindFramebuffer(gl.DRAW_FRAMEBUFFER,mainRT.fb);gl.blitFramebuffer(0,0,W,H,0,0,W,H,gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT,gl.NEAREST);}
   // Camera-depth-constrained 3D scattering. Light is stopped by the actual object.
-  bind(volumeRT);gl.disable(gl.DEPTH_TEST);gl.disable(gl.BLEND);gl.useProgram(volumeProg.p);texture(volumeProg,'uDepth',mainRT.dt,0);texture(volumeProg,'uShadow',shadowTex,1);m4(volumeProg,'uInvVP',inverse4(VP));m4(volumeProg,'uShadowVP',shadowVP);f3(volumeProg,'uCam',cameraPos);f1(volumeProg,'uTime',t);f1(volumeProg,'uEnergy',state.energy);f1(volumeProg,'uShock',state.shock);f1(volumeProg,'uBeat',state.beat);f1(volumeProg,'uCollapse',state.collapse);f1(volumeProg,'uRelease',state.releaseAge);f1(volumeProg,'uSteps',quality==='eco'?12:quality==='high'?24:18);screen(volumeProg);
+  bind(volumeRT);gl.disable(gl.DEPTH_TEST);gl.disable(gl.BLEND);gl.useProgram(volumeProg.p);texture(volumeProg,'uDepth',mainRT.dt,0);texture(volumeProg,'uShadow',shadowTex,1);m4(volumeProg,'uInvVP',inverse4(VP));m4(volumeProg,'uShadowVP',shadowVP);f3(volumeProg,'uCam',cameraPos);f1(volumeProg,'uTime',t);f1(volumeProg,'uEnergy',state.energy);f1(volumeProg,'uShock',state.shock);f1(volumeProg,'uBeat',state.beat);f1(volumeProg,'uCollapse',state.collapse);f1(volumeProg,'uRelease',state.releaseAge);f1(volumeProg,'uSteps',24);screen(volumeProg);
   let source=mainRT;for(let i=0;i<3;i++){const[a,b]=blooms[i];filter(source,a,1/source.w,1/source.h,i===0?(floatRT?.95:.5):0);filter(a,b,1/a.w,0);filter(b,a,0,1/a.h);source=a;}
   bind(null);gl.disable(gl.DEPTH_TEST);gl.useProgram(compProg.p);texture(compProg,'uScene',mainRT.t,0);texture(compProg,'uBloom0',blooms[0][0].t,1);texture(compProg,'uBloom1',blooms[1][0].t,2);texture(compProg,'uBloom2',blooms[2][0].t,3);texture(compProg,'uVolume',volumeRT.t,4);
   f2(compProg,'uResolution',W,H);const center=project([0,.02,.55]);f2(compProg,'uCenter',center[0]/innerWidth,1-center[1]/innerHeight);f1(compProg,'uTime',t);f1(compProg,'uEnergy',state.energy);f1(compProg,'uShock',state.shock);f1(compProg,'uCollapse',state.collapse);f1(compProg,'uAfter',state.after);f1(compProg,'uRelease',state.releaseAge);f1(compProg,'uComfort',reduceMotion?1:0);screen(compProg);
   gpuSync=gl.fenceSync(gl.SYNC_GPU_COMMANDS_COMPLETE,0);gl.flush();
-  if(firstFrame){firstFrame=false;document.body.classList.add('ready');$('awaken').disabled=false;window.__renderReady=true;console.info('Relikwiarz III: render started.',triangleCount,'unique solid triangles.');}
+  if(firstFrame){firstFrame=false;document.body.classList.add('ready');$('awaken').disabled=false;window.__renderReady=true;console.info('Relikwiarz IV.1: render started.',triangleCount,'unique solid triangles.');}
   if(time-uiStamp>.065||state.freeze){updateUI();uiStamp=time;}
   if(state.anatomyTarget){for(const[id,p]of labels){const pp=p.slice();pp[0]*=1+state.anatomy*.22;const a=project(pp),label=$(id);label.style.left=clamp(a[0],innerWidth*.08,innerWidth*.92)+'px';label.style.top=clamp(a[1],160,innerHeight-190)+'px';label.style.visibility=a[2]>0?'visible':'hidden';}}
   if(audio)audio.update(state);
-  if(quality==='auto'&&!state.freeze&&time>2){qualitySum+=elapsed;qualityFrames++;if(qualityFrames===30){if(qualitySum/qualityFrames>38&&qualityScale>.61){qualityScale=Math.max(.60,qualityScale*.84);resize();}qualityFrames=0;qualitySum=0;}}
   window.__frameNumber=(window.__frameNumber||0)+1;
  }catch(err){running=false;fail('Nie udało się dokończyć renderowania sceny.',String(err.message||err));console.error(err);return;}
  requestAnimationFrame(frame);
@@ -771,7 +805,7 @@ window.__ORZECZNIK={
  state,triangleCount,anatomy,reset:resetView,activate:()=>{state.autoStart=time;state.phase='charging';state.freeze=false;},abort:abortRitual,
  setPose:opts=>{Object.assign(state,opts);state.dirty=true;if(opts.time!==undefined)time=opts.time;if(opts.yaw!==undefined)state.targetYaw=opts.yaw;if(opts.pitch!==undefined)state.targetPitch=opts.pitch;if(opts.dist!==undefined)state.targetDist=opts.dist;if(opts.anatomy!==undefined){anatomy(opts.anatomy>.5);joints.forEach(j=>j.p=opts.anatomy);}},
  sample:opts=>{time=opts.time??12;state.time=time;state.freeze=true;state.energy=opts.energy??0;state.autoStart=-1;state.holding=false;state.releaseAt=opts.release===undefined?-1:time-opts.release;state.strength=opts.strength??1;state.beatPhase=.4;stepState(0);joints.forEach(j=>{j.p=state.open;j.v=0;});if(opts.spin!==undefined)spin=opts.spin;state.dirty=true;},
- advance:dt=>{state.freeze=true;time+=dt;stepState(dt);state.dirty=true;return JSON.parse(JSON.stringify(state));},getAudio:()=>audio,createAudio:createRelicAudio,getDiagnostics:()=>({ready:window.__renderReady,glError:gl.getError(),width:W,height:H,hdr:floatRT,msaa:!!msaa,phase:state.phase,time,events:audio?audio.events.size:0,triangles:triangleCount}),renderer:'Native WebGL 2 / solid procedural meshes / HDR / volumetric light / Web Audio'
+ advance:dt=>{state.freeze=true;time+=dt;stepState(dt);state.dirty=true;return JSON.parse(JSON.stringify(state));},getAudio:()=>audio,createAudio:createRelicAudio,getDiagnostics:()=>({version:'IV.1',quality:RENDER_QUALITY,ready:window.__renderReady,glError:gl.getError(),width:W,height:H,hdr:floatRT,msaa:!!msaa,phase:state.phase,time,events:audio?audio.events.size:0,triangles:triangleCount}),renderer:'Native WebGL 2 / solid procedural meshes / HDR / water surface / volumetric light / Web Audio'
 };
 
 window.addEventListener('resize',()=>{state.dirty=true;});
